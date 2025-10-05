@@ -49,7 +49,6 @@ Portfolio profesional con diseño inspirado en la icónica consola PlayStation 2
 │   └── styles/
 │       └── global.css        # Estilos globales con tema PS2
 ├── .github/
-│   └── copilot-instructions.md
 ├── astro.config.mjs
 ├── package.json
 └── README.md
