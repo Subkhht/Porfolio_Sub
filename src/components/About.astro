@@ -1,0 +1,223 @@
+---
+
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="section-title">
+          <span class="section-icon">◼</span>
+          Sobre Mí
+        </h2>
+        <div class="ps2-card">
+          <p>
+            Soy un desarrollador apasionado por crear experiencias digitales
+            únicas y funcionales. Con experiencia en desarrollo full stack, me
+            especializo en convertir ideas en realidad mediante código limpio y
+            eficiente.
+          </p>
+          <p>
+            Mi enfoque combina creatividad técnica con atención al detalle,
+            siempre buscando las mejores soluciones para cada proyecto.
+          </p>
+
+          <h3 class="skills-title">Habilidades Técnicas</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>Frontend</h4>
+              <ul>
+                <li>React / Next.js</li>
+                <li>TypeScript</li>
+                <li>Astro</li>
+                <li>CSS / Tailwind</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Backend</h4>
+              <ul>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Herramientas</h4>
+              <ul>
+                <li>Git / GitHub</li>
+                <li>Docker</li>
+                <li>VS Code</li>
+                <li>Linux</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card ps2-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Proyectos Completados</div>
+        </div>
+        <div class="stat-card ps2-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Años de Experiencia</div>
+        </div>
+        <div class="stat-card ps2-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedicación</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: var(--spacing-xl) 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .section-icon {
+    color: var(--ps2-blue-glow);
+    font-size: 2rem;
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .about-text .ps2-card {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .skills-title {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--ps2-blue-light);
+    font-size: 1.3rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+
+  .skill-category h4 {
+    color: var(--ps2-blue-glow);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .skill-category ul {
+    list-style: none;
+  }
+
+  .skill-category li {
+    padding: 0.4rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    padding-left: var(--spacing-md);
+  }
+
+  .skill-category li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: var(--ps2-blue-light);
+    font-size: 0.7rem;
+  }
+
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .stat-card:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    filter: drop-shadow(0 0 10px var(--ps2-blue-light));
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ps2-blue-glow);
+    text-shadow: 0 0 15px var(--ps2-blue-glow);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 968px) {
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .about-stats {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 150px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

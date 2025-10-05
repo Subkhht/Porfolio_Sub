@@ -1,0 +1,252 @@
+---
+---
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="section-icon">◼</span>
+      Contacto
+    </h2>
+    <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+    
+    <div class="contact-content">
+      <form class="contact-form ps2-card">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            placeholder="Tu nombre"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="tu@email.com"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="5" 
+            required
+            placeholder="Cuéntame sobre tu proyecto..."
+          ></textarea>
+        </div>
+        
+        <button type="submit" class="ps2-button submit-btn">
+          Enviar Mensaje
+        </button>
+      </form>
+      
+      <div class="contact-info">
+        <div class="info-card ps2-card">
+          <div class="info-icon">📧</div>
+          <h3>Email</h3>
+          <a href="mailto:tu@email.com">tu@email.com</a>
+        </div>
+        
+        <div class="info-card ps2-card">
+          <div class="info-icon">💼</div>
+          <h3>LinkedIn</h3>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            /tu-perfil
+          </a>
+        </div>
+        
+        <div class="info-card ps2-card">
+          <div class="info-icon">🐙</div>
+          <h3>GitHub</h3>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            /tu-usuario
+          </a>
+        </div>
+        
+        <div class="info-card ps2-card">
+          <div class="info-icon">🐦</div>
+          <h3>Twitter</h3>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            @tuusuario
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: var(--spacing-xl) 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-icon {
+    color: var(--ps2-blue-glow);
+    font-size: 2rem;
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--ps2-blue-light);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .contact-form {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--ps2-blue-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--ps2-card-border);
+    border-radius: 4px;
+    color: var(--ps2-white);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--ps2-blue-glow);
+    box-shadow: 0 0 15px rgba(107, 182, 255, 0.3);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+    cursor: pointer;
+    border: 2px solid var(--ps2-blue-light);
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .info-card {
+    text-align: center;
+    padding: var(--spacing-md);
+    animation: fadeIn 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-height: 140px;
+    justify-content: center;
+  }
+
+  .info-card:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .info-card:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .info-card:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+
+  .info-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 8px var(--ps2-blue-light));
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .info-card h3 {
+    color: var(--ps2-blue-light);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .info-card a {
+    color: rgba(255, 255, 255, 0.9);
+    word-break: break-all;
+  }
+
+  .info-card a:hover {
+    color: var(--ps2-blue-glow);
+  }
+
+  @media (max-width: 968px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-info {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const form = document.querySelector('.contact-form') as HTMLFormElement;
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Aquí puedes agregar la lógica para enviar el formulario
+    // Por ejemplo, usando fetch para enviar a un servidor
+    
+    alert('¡Mensaje enviado! (Agrega tu lógica de envío aquí)');
+    form.reset();
+  });
+</script>

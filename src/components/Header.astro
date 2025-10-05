@@ -1,0 +1,156 @@
+---
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <span class="logo-icon">▶</span>
+        <span class="logo-text">PORTFOLIO</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 31, 63, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--ps2-blue-light);
+    box-shadow: 0 4px 20px rgba(0, 71, 171, 0.5);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--ps2-white);
+  }
+
+  .logo-icon {
+    color: var(--ps2-blue-glow);
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px var(--ps2-blue-glow);
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+  }
+
+  .nav-menu a {
+    position: relative;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--ps2-white);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu a::before {
+    content: '▶';
+    position: absolute;
+    left: -10px;
+    opacity: 0;
+    color: var(--ps2-blue-glow);
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu a:hover {
+    color: var(--ps2-blue-glow);
+    text-shadow: 0 0 10px var(--ps2-blue-glow);
+  }
+
+  .nav-menu a:hover::before {
+    left: -5px;
+    opacity: 1;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--ps2-blue-light);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px var(--ps2-blue-light);
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      flex-direction: column;
+      background: rgba(0, 31, 63, 0.98);
+      width: 250px;
+      padding: var(--spacing-lg);
+      border-left: 2px solid var(--ps2-blue-light);
+      box-shadow: -4px 0 20px rgba(0, 71, 171, 0.5);
+      transition: right 0.3s ease;
+      gap: var(--spacing-md);
+    }
+
+    .nav-menu.active {
+      right: 0;
+    }
+  }
+</style>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  navToggle?.addEventListener('click', () => {
+    navMenu?.classList.toggle('active');
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu?.classList.remove('active');
+    });
+  });
+</script>

@@ -1,0 +1,225 @@
+---
+export interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  link?: string;
+  github?: string;
+}
+
+interface Props {
+  projects?: Project[];
+}
+
+const { projects = [
+  {
+    title: "Proyecto 1",
+    description: "Aplicación web moderna con React y TypeScript",
+    technologies: ["React", "TypeScript", "Node.js"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Proyecto 2",
+    description: "Sistema de gestión con base de datos SQL",
+    technologies: ["Python", "PostgreSQL", "Docker"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Proyecto 3",
+    description: "API RESTful escalable y segura",
+    technologies: ["Node.js", "Express", "MongoDB"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Proyecto 4",
+    description: "Aplicación móvil multiplataforma",
+    technologies: ["React Native", "Firebase", "Redux"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Proyecto 5",
+    description: "Dashboard de análisis de datos",
+    technologies: ["Vue.js", "D3.js", "Python"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Proyecto 6",
+    description: "Plataforma e-commerce completa",
+    technologies: ["Next.js", "Stripe", "Tailwind"],
+    link: "#",
+    github: "#"
+  }
+] } = Astro.props;
+---
+
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-icon">◼</span>
+        Proyectos Guardados
+      </h2>
+      <p class="section-subtitle">Como saves en una Memory Card de PS2</p>
+    </div>
+    
+    <div class="projects-grid">
+      {projects.map((project, index) => (
+        <article class="project-card ps2-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="card-header">
+            <div class="card-icon">💾</div>
+            <div class="card-info">
+              <h3 class="project-title">{project.title}</h3>
+              <div class="project-size">256KB</div>
+            </div>
+          </div>
+          
+          <p class="project-description">{project.description}</p>
+          
+          <div class="project-tech">
+            {project.technologies.map(tech => (
+              <span class="tech-tag">{tech}</span>
+            ))}
+          </div>
+          
+          <div class="project-actions">
+            {project.link && (
+              <a href={project.link} class="ps2-button" target="_blank" rel="noopener noreferrer">
+                Ver Demo
+              </a>
+            )}
+            {project.github && (
+              <a href={project.github} class="ps2-button" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: var(--spacing-xl) 0;
+    min-height: 100vh;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-icon {
+    color: var(--ps2-blue-glow);
+    font-size: 2rem;
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .section-subtitle {
+    color: var(--ps2-blue-light);
+    font-size: 1.1rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-height: 320px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--ps2-card-border);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 8px var(--ps2-blue-light));
+  }
+
+  .card-info {
+    flex: 1;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+    color: var(--ps2-white);
+  }
+
+  .project-size {
+    font-size: 0.85rem;
+    color: var(--ps2-blue-light);
+    font-family: monospace;
+  }
+
+  .project-description {
+    flex: 1;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .tech-tag {
+    background: rgba(77, 148, 255, 0.2);
+    color: var(--ps2-blue-light);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border: 1px solid var(--ps2-blue-light);
+    font-weight: 500;
+  }
+
+  .project-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: auto;
+  }
+
+  .project-actions .ps2-button {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      flex-direction: column;
+    }
+  }
+</style>
