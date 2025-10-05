@@ -19,26 +19,13 @@
       <h1 class="hero-title">
         <span class="glitch" data-text="Bienvenido">Bienvenido</span>
       </h1>
-      <h2 class="hero-subtitle">Desarrollador Full Stack</h2>
+      <h2 class="hero-subtitle">Desarrollador Full Stack Junior</h2>
       <p class="hero-description">
         Creando experiencias digitales únicas con tecnología de vanguardia
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="ps2-button">Ver Proyectos</a>
         <a href="#contact" class="ps2-button">Contactar</a>
-      </div>
-    </div>
-    <div class="hero-decoration">
-      <div class="memory-card">
-        <div class="memory-card-header">MEMORY CARD</div>
-        <div class="memory-card-slots">
-          <div class="slot active"></div>
-          <div class="slot active"></div>
-          <div class="slot active"></div>
-          <div class="slot"></div>
-          <div class="slot"></div>
-          <div class="slot"></div>
-        </div>
       </div>
     </div>
   </div>
@@ -56,7 +43,7 @@
 
   .hero .container {
     display: grid;
-    grid-template-columns: 0.8fr 1.5fr 1fr;
+    grid-template-columns: 0.9fr 1.5fr;
     gap: var(--spacing-xl);
     align-items: center;
   }
@@ -188,74 +175,6 @@
     flex-wrap: wrap;
   }
 
-  /* Memory Card Decoration */
-  .hero-decoration {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .memory-card {
-    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-    border: 3px solid var(--ps2-blue-light);
-    border-radius: 12px;
-    padding: var(--spacing-lg);
-    box-shadow: 
-      0 8px 32px rgba(0, 71, 171, 0.4),
-      inset 0 2px 0 rgba(255, 255, 255, 0.1);
-    transform: perspective(1000px) rotateY(-10deg);
-    transition: transform 0.5s ease;
-  }
-
-  .memory-card:hover {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-
-  .memory-card-header {
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--ps2-blue-glow);
-    text-shadow: 0 0 10px var(--ps2-blue-glow);
-    margin-bottom: var(--spacing-md);
-    letter-spacing: 2px;
-  }
-
-  .memory-card-slots {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-sm);
-  }
-
-  .slot {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 31, 63, 0.5);
-    border: 2px solid var(--ps2-gray-light);
-    border-radius: 4px;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .slot.active {
-    background: linear-gradient(135deg, var(--ps2-blue-primary) 0%, var(--ps2-blue-dark) 100%);
-    border-color: var(--ps2-blue-light);
-    box-shadow: 
-      0 0 15px var(--ps2-blue-light),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-
-  .slot.active::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--ps2-white);
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
   @media (max-width: 968px) {
     .hero .container {
       grid-template-columns: 1fr;
@@ -282,14 +201,6 @@
     .hero-subtitle {
       font-size: 1.5rem;
     }
-
-    .hero-decoration {
-      margin-top: var(--spacing-xl);
-    }
-
-    .memory-card {
-      transform: perspective(1000px) rotateY(0deg);
-    }
   }
 
   @media (max-width: 480px) {
@@ -312,11 +223,6 @@
     .hero-buttons .ps2-button {
       width: 100%;
       text-align: center;
-    }
-
-    .slot {
-      width: 50px;
-      height: 50px;
     }
   }
 </style>
