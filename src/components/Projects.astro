@@ -13,46 +13,32 @@ interface Props {
 
 const { projects = [
   {
-    title: "Proyecto 1",
-    description: "Aplicación web moderna con React y TypeScript",
-    technologies: ["React", "TypeScript", "Node.js"],
-    link: "#",
-    github: "#"
+    title: "Pokédex",
+    description: "Una Pokédex funcional con todos los 1025 Pokémon actuales. Búsqueda por nombre, visualización de detalles, tipos con badges coloridos y diseño inspirado en la Pokédex clásica.",
+    technologies: ["HTML", "CSS", "JavaScript", "PokéAPI"],
+    link: "https://subkhht.github.io/Pokedex_Subkht/",
+    github: "https://github.com/Subkhht/Pokedex_Subkht"
   },
   {
-    title: "Proyecto 2",
-    description: "Sistema de gestión con base de datos SQL",
-    technologies: ["Python", "PostgreSQL", "Docker"],
-    link: "#",
-    github: "#"
+    title: "Hablando con Niños",
+    description: "Web interactiva para que niños pequeños (1-5 años) desarrollen su lenguaje. 4 idiomas, +60 palabras, modos exploración y juego con síntesis de voz nativa.",
+    technologies: ["React", "Vite", "Web Speech API", "CSS"],
+    link: "https://subkhht.github.io/hablando-con-ninos/",
+    github: "https://github.com/Subkhht/hablando-con-ninos"
   },
   {
-    title: "Proyecto 3",
-    description: "API RESTful escalable y segura",
-    technologies: ["Node.js", "Express", "MongoDB"],
-    link: "#",
-    github: "#"
+    title: "DigiMemo",
+    description: "Aplicación web para explorar y visualizar información detallada de Digimon. Interfaz limpia y funcional para fans de la franquicia.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://subkhht.github.io/DigiMemo/",
+    github: "https://github.com/Subkhht/DigiMemo"
   },
   {
-    title: "Proyecto 4",
-    description: "Aplicación móvil multiplataforma",
-    technologies: ["React Native", "Firebase", "Redux"],
-    link: "#",
-    github: "#"
-  },
-  {
-    title: "Proyecto 5",
-    description: "Dashboard de análisis de datos",
-    technologies: ["Vue.js", "D3.js", "Python"],
-    link: "#",
-    github: "#"
-  },
-  {
-    title: "Proyecto 6",
-    description: "Plataforma e-commerce completa",
-    technologies: ["Next.js", "Stripe", "Tailwind"],
-    link: "#",
-    github: "#"
+    title: "RUN RUN RUN!!!",
+    description: "Videojuego Auto Runner desarrollado con Godot donde eres una barra de pan. Incluye múltiples niveles, música y mecánicas de juego divertidas.",
+    technologies: ["Godot", "GDScript"],
+    link: "https://github.com/Subkhht/run-run-run-/releases",
+    github: "https://github.com/Subkhht/run-run-run-"
   }
 ] } = Astro.props;
 ---
@@ -74,7 +60,6 @@ const { projects = [
             <div class="card-icon">💾</div>
             <div class="card-info">
               <h3 class="project-title">{project.title}</h3>
-              <div class="project-size">256KB</div>
             </div>
           </div>
           

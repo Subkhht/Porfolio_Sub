@@ -3,8 +3,19 @@
 
 <section id="hero" class="hero">
   <div class="container">
+    <div class="hero-profile">
+      <div class="profile-card ps2-card">
+        <div class="profile-image-wrapper">
+          <img src="/profile.png" alt="Alejandro Hernández Sánchez" class="profile-image" />
+        </div>
+        <div class="profile-status">
+          <div class="status-bar"></div>
+          <span class="status-text">PLAYER 1</span>
+        </div>
+      </div>
+    </div>
     <div class="hero-content fade-in">
-      <div class="hero-icon">▶</div>
+      <div class="hero-icon">▶ Alejandro Hernández Sánchez</div>
       <h1 class="hero-title">
         <span class="glitch" data-text="Bienvenido">Bienvenido</span>
       </h1>
@@ -45,9 +56,89 @@
 
   .hero .container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 0.8fr 1.5fr 1fr;
     gap: var(--spacing-xl);
     align-items: center;
+  }
+
+  /* Profile Card Styles */
+  .hero-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-card {
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+    border: 3px solid var(--ps2-blue-light);
+    transform: perspective(1000px) rotateY(10deg);
+    transition: all 0.5s ease;
+    max-width: 280px;
+  }
+
+  .profile-card:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.1);
+    border-color: var(--ps2-blue-glow);
+    box-shadow: 
+      0 12px 40px rgba(77, 148, 255, 0.6),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .profile-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--ps2-blue-light);
+    box-shadow: 
+      0 8px 32px rgba(0, 71, 171, 0.4),
+      inset 0 2px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .profile-card:hover .profile-image-wrapper {
+    border-color: var(--ps2-blue-glow);
+    box-shadow: 
+      0 12px 40px rgba(107, 182, 255, 0.7),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(1.05) contrast(1.1);
+    transition: all 0.5s ease;
+  }
+
+  .profile-card:hover .profile-image {
+    transform: scale(1.35);
+    filter: brightness(1.15) contrast(1.2);
+  }
+
+  .profile-status {
+    margin-top: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .status-bar {
+    height: 4px;
+    background: linear-gradient(90deg, 
+      var(--ps2-blue-dark) 0%, 
+      var(--ps2-blue-primary) 50%, 
+      var(--ps2-blue-glow) 100%
+    );
+    border-radius: 2px;
+    margin-bottom: var(--spacing-xs);
+    box-shadow: 0 0 10px var(--ps2-blue-light);
+  }
+
+  .status-text {
+    color: var(--ps2-blue-glow);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--ps2-blue-glow);
   }
 
   .hero-content {
@@ -55,11 +146,15 @@
   }
 
   .hero-icon {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: var(--ps2-blue-glow);
     margin-bottom: var(--spacing-md);
     text-shadow: 0 0 30px var(--ps2-blue-glow);
     animation: glow 2s ease-in-out infinite;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .hero-title {
@@ -166,6 +261,20 @@
       grid-template-columns: 1fr;
     }
 
+    .hero-profile {
+      order: -1;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .profile-card {
+      transform: perspective(1000px) rotateY(0deg);
+      max-width: 250px;
+    }
+
+    .hero-icon {
+      font-size: 1.6rem;
+    }
+
     .hero-title {
       font-size: 2.5rem;
     }
@@ -184,6 +293,14 @@
   }
 
   @media (max-width: 480px) {
+    .profile-card {
+      max-width: 200px;
+    }
+
+    .hero-icon {
+      font-size: 1.2rem;
+    }
+
     .hero-title {
       font-size: 2rem;
     }
